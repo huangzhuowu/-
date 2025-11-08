@@ -1,6 +1,7 @@
 ---
 layout: item
 title: "蔡元培与《红楼梦》索隐派"
+author: 黄拙吾（洪清档案整理组）
 category: history
 type: academic
 verification_status: approved
