@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<h1>{{ page.title }}</h1>
+
+<p>说明：仅展示 <code>verification_status: approved</code> 的条目。点击标题查看详情。</p>
+
+{% assign items = site[page.collection] | where: "verification_status","approved" | sort: "date_event" %}
+{% if page.order == "desc" %}
+  {% assign items = items | reverse %}
+{% endif %}
+
+<ul>
+{% for doc in items %}
+  <li>
+    <strong>{{ doc.date_event | default: "未知时间" }}</strong>
+    — <a href="{{ doc.url | relative_url }}">{{ doc.title }}</a>
+    <br>
+    <small>
+      出处：{% if doc.source_url %}<a href="{{ doc.source_url }}">{{ doc.source_title }}</a>{% else %}{{ doc.source_title }}{% endif %}
+      | 类型：{{ doc.type }}
+      {% if doc.location %}| 地点：{{ doc.location }}{% endif %}
+      {% if doc.tags %}| 标签：{{ doc.tags | join: ', ' }}{% endif %}
+    </small>
+  </li>
+{% endfor %}
+</ul>

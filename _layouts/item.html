@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<article>
+  <h1>{{ page.title }}</h1>
+  <p><strong>事件时间：</strong>{{ page.date_event | default: "未知" }}</p>
+  {% if page.date_source %}<p><strong>资料时间：</strong>{{ page.date_source }}</p>{% endif %}
+  <p><strong>专区：</strong>{{ page.area }} | <strong>类型：</strong>{{ page.type }}</p>
+  <p><strong>出处：</strong>
+    {% if page.source_url %}
+      <a href="{{ page.source_url }}">{{ page.source_title }}</a>
+    {% else %}
+      {{ page.source_title }}
+    {% endif %}
+    {% if page.source_author %}（{{ page.source_author }}）{% endif %}
+    {% if page.source_publisher %}，{{ page.source_publisher }}{% endif %}
+  </p>
+  {% if page.location %}<p><strong>地点：</strong>{{ page.location }}</p>{% endif %}
+  {% if page.language %}<p><strong>语言：</strong>{{ page.language }}</p>{% endif %}
+  {% if page.tags %}<p><strong>标签：</strong>{{ page.tags | join: ", " }}</p>{% endif %}
+  {% if page.summary %}<p><strong>摘要：</strong>{{ page.summary }}</p>{% endif %}
+  <hr>
+  {{ content }}
+</article>

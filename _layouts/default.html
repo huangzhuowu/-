@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | default: site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrapper">
+      <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+      <nav>
+        <a href="{{ '/pages/history' | relative_url }}">真实史料</a> |
+        <a href="{{ '/pages/entertainment' | relative_url }}">娱乐信息</a> |
+        <a href="{{ '/pages/metaphysics' | relative_url }}">玄学信息</a>
+      </nav>
+    </div>
+  </header>
+  <main class="page-content">
+    <div class="wrapper">
+      {{ content }}
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrapper">
+      <p>© {{ site.title }} · 内容遵循 CC BY-SA 4.0，代码 MIT（除非条目另有声明）。</p>
+    </div>
+  </footer>
+</body>
+</html>

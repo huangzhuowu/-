@@ -1,0 +1,26 @@
+title: 史料众包档案
+description: 大家提交，我来审核，通过即展示
+theme: minima
+baseurl: "" # 如果你的仓库不是用户名.github.io主仓库，发布后这里可以设置为 "/仓库名"
+url: ""
+
+collections:
+  history:
+    output: true
+    permalink: /history/:name
+  entertainment:
+    output: true
+    permalink: /entertainment/:name
+  metaphysics:
+    output: true
+    permalink: /metaphysics/:name
+
+defaults:
+  - scope: { path: "_history" }
+    values: { layout: item, area: history }
+  - scope: { path: "_entertainment" }
+    values: { layout: item, area: entertainment }
+  - scope: { path: "_metaphysics" }
+    values: { layout: item, area: metaphysics }
+
+# 以后要做中英双语，可在 front-matter 增加 lang/en_title 等字段，或切换到 i18n 框架
