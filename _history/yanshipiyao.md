@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "关于“洪清说”严实副教授的辟谣"
 category: history
 type: commentary
