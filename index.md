@@ -8,86 +8,43 @@ title: 洪清档案
   <div class="title-underline"></div>
 </div>
 
-<a id="history"></a>
-<div class="subhero history">
-  <h1><span class="badge-dot history"></span>真实史料</h1>
-  <p>仅展示 <code>verification_status: approved</code> 的条目；按 <strong>事件时间</strong> 升序排列。</p>
+<div class="grid">
+  <a class="card history" href="{{ '/pages/history' | relative_url }}">
+    <div class="topline"></div>
+    <h3>真实史料</h3>
+    <p>有明确出处与考据价值的原始/次生文献。自动按事件时间排序。<br>
+    记录官方档案、私人笔记、信件等第一手资料，以及经由专业整理与分析的二手资料。</p>
+  </a>
+
+  <a class="card ent" href="{{ '/pages/entertainment' | relative_url }}">
+    <div class="topline"></div>
+    <h3>娱乐信息</h3>
+    <p>影视、小说、游戏中的洪清题材演绎，区分史实与艺术加工。<br>
+    探索文化表达与历史真实之间的关系，帮助读者辨析虚构与事实。</p>
+  </a>
+
+  <a class="card meta" href="{{ '/pages/metaphysics' | relative_url }}">
+    <div class="topline"></div>
+    <h3>玄学信息</h3>
+    <p>命理、志怪、风水等材料与学术性讨论，强调来源与注释。<br>
+    收录古籍整理与现代学术研究，关注文化现象的历史脉络与可信度。</p>
+  </a>
 </div>
 
-{%- assign history_items = site.history | where: "verification_status","approved" | sort: "date_event" -%}
-<div class="list-cards">
-  {%- for doc in history_items -%}
-  <div class="entry">
-    <div class="top">
-      <div class="date">{{ doc.date_event | default: "未知时间" }}</div>
-      <div class="title"><a href="{{ doc.url | relative_url }}">{{ doc.title }}</a></div>
-      <div class="pills">
-        <span class="pill">history / {{ doc.type }}</span>
-        {%- if doc.tags -%}{% for t in doc.tags limit:2 %}<span class="pill sec">{{ t }}</span>{% endfor %}{%- endif -%}
-      </div>
-    </div>
-    <div class="meta">
-      出处：
-      {%- if doc.source_url -%}<a href="{{ doc.source_url }}">{{ doc.source_title }}</a>{%- else -%}{{ doc.source_title }}{%- endif -%}
-      {%- if doc.location -%} · 地点：{{ doc.location }}{%- endif -%}
-      {%- if doc.source_author -%} · 作者：{{ doc.source_author }}{%- endif -%}
-    </div>
-  </div>
-  {%- endfor -%}
-</div>
-
-<a id="entertainment"></a>
-<div class="subhero ent" style="margin-top:28px">
-  <h1><span class="badge-dot ent"></span>娱乐信息</h1>
-  <p>仅展示 <code>verification_status: approved</code> 的条目；按 <strong>事件时间</strong> 降序展示近期内容。</p>
-</div>
-
-{%- assign ent_items = site.entertainment | where: "verification_status","approved" | sort: "date_event" | reverse -%}
-<div class="list-cards">
-  {%- for doc in ent_items -%}
-  <div class="entry">
-    <div class="top">
-      <div class="date">{{ doc.date_event | default: "未知时间" }}</div>
-      <div class="title"><a href="{{ doc.url | relative_url }}">{{ doc.title }}</a></div>
-      <div class="pills">
-        <span class="pill sec">entertainment / {{ doc.type }}</span>
-        {%- if doc.tags -%}{% for t in doc.tags limit:2 %}<span class="pill sec">{{ t }}</span>{% endfor %}{%- endif -%}
-      </div>
-    </div>
-    <div class="meta">
-      出处：
-      {%- if doc.source_url -%}<a href="{{ doc.source_url }}">{{ doc.source_title }}</a>{%- else -%}{{ doc.source_title }}{%- endif -%}
-      {%- if doc.location -%} · 地点：{{ doc.location }}{%- endif -%}
-      {%- if doc.source_author -%} · 作者：{{ doc.source_author }}{%- endif -%}
-    </div>
-  </div>
-  {%- endfor -%}
-</div>
-
-<a id="metaphysics"></a>
-<div class="subhero meta" style="margin-top:28px">
-  <h1><span class="badge-dot meta"></span>玄学信息</h1>
-  <p>仅展示 <code>verification_status: approved</code> 的条目；按 <strong>事件时间</strong> 降序展示。</p>
-</div>
-
-{%- assign meta_items = site.metaphysics | where: "verification_status","approved" | sort: "date_event" | reverse -%}
-<div class="list-cards">
-  {%- for doc in meta_items -%}
-  <div class="entry">
-    <div class="top">
-      <div class="date">{{ doc.date_event | default: "未知时间" }}</div>
-      <div class="title"><a href="{{ doc.url | relative_url }}">{{ doc.title }}</a></div>
-      <div class="pills">
-        <span class="pill meta">metaphysics / {{ doc.type }}</span>
-        {%- if doc.tags -%}{% for t in doc.tags limit:2 %}<span class="pill meta">{{ t }}</span>{% endfor %}{%- endif -%}
-      </div>
-    </div>
-    <div class="meta">
-      出处：
-      {%- if doc.source_url -%}<a href="{{ doc.source_url }}">{{ doc.source_title }}</a>{%- else -%}{{ doc.source_title }}{%- endif -%}
-      {%- if doc.location -%} · 地点：{{ doc.location }}{%- endif -%}
-      {%- if doc.source_author -%} · 作者：{{ doc.source_author }}{%- endif -%}
-    </div>
-  </div>
-  {%- endfor -%}
+<div class="section">
+  <h2>最近更新</h2>
+  <ul class="list">
+  {% assign all = site.history | concat: site.entertainment | concat: site.metaphysics %}
+  {% assign approved = all | where: "verification_status","approved" %}
+  {% assign sorted = approved | sort: "date_event" | reverse %}
+  {% for doc in sorted limit:10 %}
+    <li class="row">
+      <span class="date">{{ doc.date_event }}</span>
+      <a href="{{ doc.url | relative_url }}">{{ doc.title }}</a>
+      <span class="badges">
+        <span class="badge {% if doc.area == 'history' %}h{% endif %}{% if doc.area == 'metaphysics' %} m{% endif %}">{{ doc.area }} / {{ doc.type }}</span>
+      </span>
+    </li>
+  {% endfor %}
+  </ul>
 </div>
