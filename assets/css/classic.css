@@ -117,3 +117,28 @@ a:hover{text-decoration:underline}
 .column .counter{ color:#6b7280; font-size:12px; margin:-6px 0 8px; }
 .mini-row.hidden{ display:none !important; }
 
+/* ===== 顶栏：LOGO + 诗句 ===== */
+.site-header { position:sticky; top:0; z-index:10; }
+.site-header .bar{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:16px; padding:12px 0;
+}
+.brand{ display:flex; align-items:center; gap:10px; }
+.brand .logo{ display:inline-flex; width:22px; height:22px; }
+.brand a{ color:#fff; font-weight:700; font-size:20px; letter-spacing:.5px; }
+
+.poem{
+  display:flex; gap:16px; align-items:center; flex-wrap:wrap;
+  color:#e5e7eb; opacity:.9; font-size:12.5px; line-height:1.4;
+  text-align:right;
+}
+.poem span{ white-space:nowrap; }
+
+/* 小屏：诗句改为一行/两行并自动换行，避免挤压标题 */
+@media (max-width:900px){
+  .poem{ max-width:60%; justify-content:flex-end; }
+}
+@media (max-width:640px){
+  .poem{ display:none; }       /* 手机端可隐藏诗句，保留标题与内容 */
+}
+
