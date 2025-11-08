@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: item
 title: "洪清说与《推背图》"
 date_event: 648-02-02
 type: rumor
