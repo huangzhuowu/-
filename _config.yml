@@ -7,13 +7,13 @@ baseurl: "/The-Dream-of-Hong"
 collections:
   history:
     output: true
-    permalink: /history/:name
+    permalink: /history/:name/
   entertainment:
     output: true
-    permalink: /entertainment/:name
+    permalink: /entertainment/:name/
   metaphysics:
     output: true
-    permalink: /metaphysics/:name
+    permalink: /metaphysics/:name/
 
 defaults:
   - scope: { path: "_history" }
