@@ -138,9 +138,6 @@ a:hover{text-decoration:underline}
 @media (max-width:900px){
   .poem{ max-width:60%; justify-content:flex-end; }
 }
-@media (max-width:640px){
-  .poem{ display:none; }       /* 手机端可隐藏诗句，保留标题与内容 */
-}
 
 /* ===== 手机端标题居中 ===== */
 @media (max-width: 640px) {
