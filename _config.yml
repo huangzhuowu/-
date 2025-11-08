@@ -1,8 +1,8 @@
 title: 洪清档案
-description: 大家提交，我来审核，通过即展示
 theme: minima
-baseurl: "" # 如果你的仓库不是用户名.github.io主仓库，发布后这里可以设置为 "/仓库名"
-url: ""
+url: "https://huangzhuowu.github.io"
+baseurl: "/The-Dream-of-Hong"   
+
 
 collections:
   history:
