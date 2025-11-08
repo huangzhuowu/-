@@ -50,7 +50,7 @@ tags: [康熙身世, 严实, 洪清说, 舆情分析, 清史]
 - [怎样看新京报等自媒体连续辟谣康熙身世？ - 日天的回答 - 知乎](https://www.zhihu.com/question/1970231843015103287/answer/1970492045316558920)
 - [关于康熙身世的瓜，中央民大严实副教授，用DNA检测给出了答案 - 网易新闻](https://www.163.com/dy/article/KDPNT38K05565FVS.html)
 - [严实副教授本人在知乎的回答](https://www.zhihu.com/question/1967645936386830549/answer/1969091765781927051)
-
+- [严实副教授的相关论文](https://www.researchgate.net/publication/269876995_Y_Chromosome_of_Aisin_Gioro_the_Imperial_House_of_Qing_Dynasty)
 
 ---
 
