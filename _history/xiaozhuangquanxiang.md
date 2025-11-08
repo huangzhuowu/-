@@ -4,7 +4,7 @@ title: "假！孝庄劝降洪承畴"
 category: history
 type: commentary
 verification_status: approved
-data_event: 1763-01-01
+date_event: "1763-01-01"    
 tags: [清史, 孝庄, 洪承畴, 传闻, 辟谣]
 ---
 
