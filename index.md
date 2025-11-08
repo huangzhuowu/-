@@ -22,7 +22,6 @@ title: 洪清档案
   <!-- 真实史料（红） -->
   <section class="column history" id="history">
     <div class="col-head">
-      <div class="counter" data-counter-for="history"></div>   <!-- 真实史料列 -->
       <div class="bar"></div><h2>真实史料</h2>
     </div>
     <ul class="mini-list">
@@ -39,7 +38,6 @@ title: 洪清档案
   <!-- 娱乐信息（蓝） -->
   <section class="column ent" id="entertainment">
     <div class="col-head">
-      <div class="counter" data-counter-for="entertainment"></div> <!-- 娱乐信息列 -->
       <div class="bar"></div><h2>娱乐信息</h2>
     </div>
     <ul class="mini-list">
@@ -56,7 +54,6 @@ title: 洪清档案
   <!-- 玄学信息（绿） -->
   <section class="column meta" id="metaphysics">
     <div class="col-head">
-      <div class="counter" data-counter-for="metaphysics"></div>   <!-- 玄学信息列 -->
       <div class="bar"></div><h2>玄学信息</h2>
     </div>
     <ul class="mini-list">
