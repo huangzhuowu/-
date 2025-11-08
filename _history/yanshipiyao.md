@@ -1,5 +1,6 @@
 ---
 title: "关于“洪清说”严实副教授的辟谣"
+author: 黄拙吾（洪清档案整理组）
 category: history
 type: commentary
 verification_status: approved
