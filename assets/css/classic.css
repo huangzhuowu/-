@@ -57,3 +57,46 @@ a:hover{text-decoration:underline}
 .badge{font-size:12px; padding:2px 8px; border-radius:999px; border:1px solid #d1d5db; background:#f0f4ff; color:#1e3a8a;}
 .badge.h{background:#fde2e2;border-color:#f4b4b4;color:#7a1d1d}
 .badge.m{background:#e4f4ea;border-color:#bfe3cc;color:#2f7b4f}
+
+/* ===== 三列栏目布局（只显示“时间 + 标题”） ===== */
+.triple-grid{
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:22px; margin:12px 0 28px;
+}
+@media (max-width:960px){ .triple-grid{ grid-template-columns:repeat(2,1fr);} }
+@media (max-width:640px){ .triple-grid{ grid-template-columns:1fr; } }
+
+.column{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:14px 16px;
+}
+
+.col-head{
+  display:flex; align-items:center; gap:10px;
+  margin-bottom:10px; padding-bottom:8px;
+  border-bottom:1px dashed #eadfcd;
+  font-family:'Songti SC','Noto Serif SC',Georgia,serif;
+}
+.col-head .bar{
+  width:44px; height:6px; border-radius:6px;
+}
+.col-head h2{ margin:0; font-size:18px; }
+
+/* 主题色 */
+.history .col-head .bar{ background:var(--accent-1); }
+.ent     .col-head .bar{ background:var(--accent-2); }
+.meta    .col-head .bar{ background:var(--accent-3); }
+
+/* 列表行：只保留“时间 + 标题” */
+.mini-list{ list-style:none; padding:0; margin:0; }
+.mini-row{
+  display:flex; align-items:center; gap:12px;
+  padding:8px 4px; border-bottom:1px dashed #efe7dc;
+}
+.mini-row:last-child{ border-bottom:none; }
+.mini-row .date{ min-width:100px; font-weight:700; }
+.mini-row a{ color:var(--ink); text-decoration:none; }
+.mini-row a:hover{ text-decoration:underline; }
