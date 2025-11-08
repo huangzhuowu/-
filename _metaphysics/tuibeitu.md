@@ -58,5 +58,3 @@ tags: [推背图, 洪清说, 康熙, 八旗, 预言]
 - [洪承畴投降的根本原因是什么呢？ - 蜜三刀的回答 - 知乎](https://www.zhihu.com/question/1919816758015030871/answer/1967742503043184275)
 - [如何看待最近网络上爆火的洪清假说？ - 贫下中农的回答 - 知乎](https://www.zhihu.com/question/1967645936386830549/answer/1969529173845467406)
 - [现在看来推背图实在太强了 - 鲸鱼王 | 小红书](https://www.xiaohongshu.com/discovery/item/690aacc5000000000300d71c?source=webshare&xhsshare=pc_web&xsec_token=ABiZUX64g9sGXqYR5lnybsoYjYO8dsnEDHyDlGXY7ou5g=&xsec_source=pc_share)
-
-🕯️ *本条目归入「玄学信息区」，旨在探讨传统谶纬文化如何与当代网络史观交织。内容仅供思想史与文化象征研究参考。*
