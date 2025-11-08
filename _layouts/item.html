@@ -7,7 +7,7 @@ layout: default
   <p><strong>事件时间：</strong>{{ page.date_event | default: "未知" }}</p>
 
   {% if page.author %}
-    <p><strong>作者：</strong>{{ page.author }}</p>
+    <p><strong>作者：</strong>{{ page.author | default: "黄拙吾（洪清档案整理组）"  }}</p>
   {% endif %}
 
   {% if page.tags %}
