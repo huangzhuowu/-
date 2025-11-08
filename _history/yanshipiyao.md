@@ -3,7 +3,7 @@ title: "关于“洪清说”严实副教授的辟谣"
 category: history
 type: commentary
 verification_status: approved
-date_event: 2025-02-01
+date_event: 2025-11-07
 tags: [康熙身世, 严实, 洪清说, 舆情分析, 清史]
 ---
 
