@@ -1,12 +1,11 @@
 ---
-layout: post
-title: "假！孝庄劝降洪承畴"
-category: history
-type: commentary
+title: 假！孝庄劝降洪承畴
+date_event: 1642-05-01
+type: primary
 verification_status: approved
-date_event: "1763-01-01"    
-tags: [清史, 孝庄, 洪承畴, 传闻, 辟谣]
+tags: [清宫, 后妃, 断发, 乾隆]
 ---
+
 
 ## 一、传闻内容
 
