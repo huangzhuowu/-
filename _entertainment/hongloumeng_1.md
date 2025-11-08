@@ -3,7 +3,7 @@ title: "洪清说与《红楼梦》悼明讽清的关联（一）"
 category: entertainment
 type: commentary
 verification_status: approved
-event_date: 1791-02-03
+date_event: 1791-02-03
 tags: [洪清说, 红楼梦, 悼明讽清, 文学隐喻, 清史]
 ---
 
