@@ -1,5 +1,6 @@
 ---
 title: 乾隆继后乌拉那拉氏断发
+author: 黄拙吾（洪清档案整理组）
 date_event: 1765-02-18
 type: primary
 verification_status: approved
