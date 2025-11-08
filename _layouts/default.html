@@ -10,13 +10,38 @@
 <body>
   <header class="site-header">
     <div class="wrapper bar">
-      <div class="brand"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></div>
-      <nav class="nav">
+      <!-- 左侧：桃花 LOGO + 站点名 -->
+      <div class="brand">
+        <span class="logo" aria-hidden="true">
+          <!-- 红色桃花（纯 SVG，不需要外链图片） -->
+          <svg width="22" height="22" viewBox="0 0 64 64" fill="none">
+            <circle cx="32" cy="32" r="10" fill="#ef4444" opacity="0.25"/>
+            <path d="M32 10c5 7-1 12-1 12s-6-5 1-12z" fill="#dc2626"/>
+            <path d="M54 24c-8 2-11-4-11-4s6-5 11 4z" fill="#dc2626"/>
+            <path d="M46 50c-5-7 1-12 1-12s6 5-1 12z" fill="#dc2626"/>
+            <path d="M10 40c8-2 11 4 11 4s-6 5-11-4z" fill="#dc2626"/>
+            <path d="M18 14c5 7 11 4 11 4s-6-5-11-4z" fill="#dc2626"/>
+            <circle cx="32" cy="32" r="4" fill="#b91c1c"/>
+          </svg>
+        </span>
+        <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      </div>
+  
+      <!-- 右侧：四句诗（小字） -->
+      <div class="poem">
+        <span>花谢花飞满天，红消香断有谁怜？</span>
+        <span>明年花谢知为谁开，尽入洪楼一梦中。</span>
+      </div>
+  
+      <!-- （导航已隐藏，如需再用，把下行 display 改为 flex） -->
+      <nav class="nav" style="display:none">
         <a href="{{ '/#history' | relative_url }}">真实史料</a>
         <a href="{{ '/#entertainment' | relative_url }}">娱乐信息</a>
         <a href="{{ '/#metaphysics' | relative_url }}">玄学信息</a>
       </nav>
     </div>
+  </header>
+
   </header>
   <main>
     <div class="wrapper">
