@@ -2,7 +2,7 @@
 layout: item
 title: "洪清说与《推背图》"
 date_event: 648-02-02
-type: rumor
+type: metaphysics
 verification_status: approved
 tags: [推背图, 洪清说, 康熙, 八旗, 预言]
 ---
