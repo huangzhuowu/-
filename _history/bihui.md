@@ -1,6 +1,7 @@
 ---
 layout: item
 title: "从康雍乾避讳“承”字看洪清说合理性"
+author: 映桃林_小红书用户
 category: history
 type: primary
 verification_status: approved
