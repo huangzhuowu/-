@@ -1,12 +1,14 @@
 ---
 layout: item
 title: "皇太极-一个没有真名的皇帝"
-category: entertainment
+author: 黄拙吾（洪清档案整理组）
+category: history
 type: commentary
 verification_status: approved
 date_event: 1636-05-14
 tags: [皇太极, 洪台吉, 满文, 名字, 清史, 洪清说]
 ---
+
 
 在清史里，有一个皇帝的名字显得格外奇怪——  
 别的皇帝都有“名”与“字”，唯独他，没有名字，只有称号。  
