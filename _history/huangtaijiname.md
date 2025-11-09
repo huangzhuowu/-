@@ -4,7 +4,7 @@ title: "皇太极-一个没有真名的皇帝"
 category: entertainment
 type: commentary
 verification_status: approved
-date_event: 1636-5-14
+date_event: 1636-05-14
 tags: [皇太极, 洪台吉, 满文, 名字, 清史, 洪清说]
 ---
 
