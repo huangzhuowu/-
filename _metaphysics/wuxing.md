@@ -1,10 +1,11 @@
 ---
 layout: item
 title: "明清民共的五行宿命"
+author: 黄拙吾（洪清档案整理组）
 category: metaphysics
 verification_status: approved
 tags: [五行, 明清, 民国, 中共, 气运, 易学]
-date-event: 2025-11-09
+date_event: 2025-11-09
 ---
 
 > “天地运转，五德代兴，盛衰如环，理无穷已。”
