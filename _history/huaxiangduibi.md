@@ -2,7 +2,7 @@
 layout: item
 title: "从皇室画像对比看“洪清说”流行的原因"
 author: 洪清档案整理组
-date_event: 2025-11-09
+date_event: 1761-11-09
 category: history
 type: primary
 verification_status: approved
