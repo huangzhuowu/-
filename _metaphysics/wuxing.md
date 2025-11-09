@@ -1,8 +1,7 @@
 ---
-layout: metaphysics
+layout: item
 title: "明清民共的五行宿命"
-author: 五行气运
-categories: [玄学, 历史象数]
+categories: metaphysics
 tags: [五行, 明清, 民国, 中共, 气运, 易学]
 date: 2025-11-09
 ---
