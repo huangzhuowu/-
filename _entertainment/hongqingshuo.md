@@ -1,7 +1,7 @@
 ---
 layout: item
 title: "洪承畴一手构建了满族"
-author:毛贼_知乎用户
+author: 毛贼_知乎用户
 category: entertainment
 type: commentary
 verification_status: approved
