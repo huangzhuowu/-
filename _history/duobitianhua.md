@@ -89,4 +89,6 @@ summary: 根据《清圣祖实录》《啸亭杂录》等史料记载，康熙�
 ---
 
 **参考资料：**  
-《清圣祖实录》、《清史稿》和《啸亭杂录》
+- [来自清宫的痘情报告——康熙与天花](https://news.sciencenet.cn/sbhtmlnews/2013/8/276706.shtm)
+- [《清宫档案揭秘》第03节 防天花，康熙措施最得力(1)](https://www.quanxue.cn/ls_qing2/dangan/dangan85.html)
+- [真“痘”：顺治十八年，来的太突然-知乎专栏](https://www.zhihu.com/tardis/zm/art/15043500749?source_id=1003)
