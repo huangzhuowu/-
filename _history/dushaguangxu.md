@@ -1,9 +1,11 @@
 ---
 layout: item
 title: "被辟谣的真实野史：慈禧毒杀光绪？"
-type: history
+catalogy: history
+type: academic
+verification_status: approved
 tags: [光绪, 慈禧, 清史, 辟谣, 清末悬案, 砷中毒]
-date: 2008-11-03
+date-event: 2008-11-03
 ---
 
 > “光绪之死，距慈禧仅一日；谣言百年，真相渐明。”
