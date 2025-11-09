@@ -4,7 +4,7 @@ title: "旁证：孝庄太后好男色？"
 category: history
 type: secondary
 verification_status: approved
-date_event: 1948-06-10
+date_event: 1955-06-10
 tags: [孝庄太后, 吕宫, 吕思勉, 清宫野史, 洪清说, 明清史]
 ---
 
