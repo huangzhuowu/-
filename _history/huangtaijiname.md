@@ -1,6 +1,6 @@
 ---
 layout: item
-title: "神隐·皇太极"
+title: "皇太极-一个没有真名的皇帝"
 category: entertainment
 type: commentary
 verification_status: approved
