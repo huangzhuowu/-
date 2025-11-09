@@ -17,7 +17,7 @@ tags: [康熙, 雍正, 乾隆, 嘉庆, 避讳, 承字, 洪清说]
 
 ## 一、命名体系的突变
 
-!清朝皇室名讳](https://github.com/huangzhuowu/The-Dream-of-Hong/blob/main/images/%E5%85%B3%E4%BA%8E%E6%B4%AA%E7%8E%84%E7%83%A8%E4%B8%80%E4%B8%AA%E5%8F%AF%E8%83%BD%E7%9A%84%E6%96%B0%E8%AF%81%E6%8D%AE_1_%E6%98%A0%E6%A1%83%E6%9E%97_%E6%9D%A5%E8%87%AA%E5%B0%8F%E7%BA%A2%E4%B9%A6%E7%BD%91%E9%A1%B5%E7%89%88.jpg?raw=true)   
+![清朝皇室名讳](https://github.com/huangzhuowu/The-Dream-of-Hong/blob/main/images/%E5%85%B3%E4%BA%8E%E6%B4%AA%E7%8E%84%E7%83%A8%E4%B8%80%E4%B8%AA%E5%8F%AF%E8%83%BD%E7%9A%84%E6%96%B0%E8%AF%81%E6%8D%AE_1_%E6%98%A0%E6%A1%83%E6%9E%97_%E6%9D%A5%E8%87%AA%E5%B0%8F%E7%BA%A2%E4%B9%A6%E7%BD%91%E9%A1%B5%E7%89%88.jpg?raw=true)   
 康熙早期几位夭折的皇子名为**承瑞、承祜、承庆**。  
 然而，从康熙十一年（1672年）开始，这一“承”字辈突然被废止，改为“胤”字辈。  
 
