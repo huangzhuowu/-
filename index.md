@@ -35,10 +35,10 @@ title: 洪清档案
     </ul>
   </section>
 
-  <!-- 文学娱乐（蓝） -->
+  <!-- 娱乐信息（蓝） -->
   <section class="column ent" id="entertainment">
     <div class="col-head">
-      <div class="bar"></div><h2>文学娱乐</h2>
+      <div class="bar"></div><h2>娱乐信息</h2>
     </div>
     <ul class="mini-list">
       {%- assign ent_items = site.entertainment | where: "verification_status","approved" | sort: "date_event" -%}
@@ -51,10 +51,10 @@ title: 洪清档案
     </ul>
   </section>
 
-  <!-- 玄学推背（绿） -->
+  <!-- 玄学信息（绿） -->
   <section class="column meta" id="metaphysics">
     <div class="col-head">
-      <div class="bar"></div><h2>玄学推背</h2>
+      <div class="bar"></div><h2>玄学信息</h2>
     </div>
     <ul class="mini-list">
       {%- assign meta_items = site.metaphysics | where: "verification_status","approved" | sort: "date_event" -%}
