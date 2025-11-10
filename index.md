@@ -25,7 +25,7 @@ title: 洪清档案
       <div class="bar"></div><h2>真实史料</h2>
     </div>
     <ul class="mini-list">
-      {%- assign history_items = site.history | where: "verification_status","approved" | sort: "date_event" -%}
+      {%- assign history_items = site.history | where: "verification_status","approved" | where_exp: "d","d.date_event" | sort: "date_event" | reverse -%}
       {%- for doc in history_items -%}
       <li class="mini-row">
         <span class="date">{{ doc.date_event }}</span>
@@ -41,7 +41,7 @@ title: 洪清档案
       <div class="bar"></div><h2>娱乐信息</h2>
     </div>
     <ul class="mini-list">
-      {%- assign ent_items = site.entertainment | where: "verification_status","approved" | sort: "date_event" -%}
+      {%- assign ent_items = site.entertainment | where: "verification_status","approved" | where_exp: "d","d.date_event" | sort: "date_event" | reverse -%}
       {%- for doc in ent_items -%}
       <li class="mini-row">
         <span class="date">{{ doc.date_event }}</span>
@@ -57,7 +57,7 @@ title: 洪清档案
       <div class="bar"></div><h2>玄学信息</h2>
     </div>
     <ul class="mini-list">
-      {%- assign meta_items = site.metaphysics | where: "verification_status","approved" | sort: "date_event" -%}
+      {%- assign meta_items = site.metaphysics | where: "verification_status","approved" | where_exp: "d","d.date_event" | sort: "date_event" | reverse -%}
       {%- for doc in meta_items -%}
       <li class="mini-row">
         <span class="date">{{ doc.date_event }}</span>
