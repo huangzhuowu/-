@@ -2,7 +2,7 @@
 layout: item
 author: 黄拙吾（洪清档案整理组）
 title: "被辟谣的真实野史：慈禧毒杀光绪？"
-date_event: 2028-11-03
+date_event: 2008-11-03
 category: history
 type: academic
 verification_status: approved
