@@ -15,12 +15,22 @@ collections:
     output: true
     permalink: /metaphysics/:name/
 
+# defaults:
+#   - scope: { path: "_history" }
+#     values: { layout: item, area: history }
+#   - scope: { path: "_entertainment" }
+#     values: { layout: item, area: entertainment }
+#   - scope: { path: "_metaphysics" }
+#     values: { layout: item, area: metaphysics }
 defaults:
-  - scope: { path: "_history" }
-    values: { layout: item, area: history }
-  - scope: { path: "_entertainment" }
-    values: { layout: item, area: entertainment }
-  - scope: { path: "_metaphysics" }
-    values: { layout: item, area: metaphysics }
+  - scope: { path: "", type: history }
+    values: { layout: item, area: history, render_with_liquid: false }
+
+  - scope: { path: "", type: entertainment }
+    values: { layout: item, area: entertainment, render_with_liquid: false }
+
+  - scope: { path: "", type: metaphysics }
+    values: { layout: item, area: metaphysics, render_with_liquid: false }
+
 
 # 以后要做中英双语，可在 front-matter 增加 lang/en_title 等字段，或切换到 i18n 框架
