@@ -2,11 +2,11 @@ import os
 import re
 import yaml
 import datetime
-import json
 
-# --- 配置区域 ---
+# --- 配置 ---
 FOLDERS = ['_history', '_entertainment', '_metaphysics']
-OUTPUT_FILE = 'full_project.md'
+CONTENT_FILE = 'content.md'
+METADATA_FILE = 'metadata.yaml'
 CONFIG_FILE = '_config.yml'
 
 CATEGORY_MAP = {
@@ -16,46 +16,61 @@ CATEGORY_MAP = {
 }
 
 def parse_front_matter(content):
-    """解析 Front Matter，忽略所有可能导致报错的复杂字符"""
-    pattern = r'^\s*---\s*\n(.*?)\n---\s*'
+    """
+    强力去除 Front Matter
+    """
+    # 1. 尝试标准正则
+    pattern = r'^\s*---\s*\n(.*?)\n---\s*\n'
     match = re.match(pattern, content, re.S)
     if match:
-        fm_text = match.group(1)
         try:
-            # 简单清理 tab
-            fm_data = yaml.safe_load(fm_text.replace('\t', '  '))
+            fm = yaml.safe_load(match.group(1))
             body = content[match.end():]
-            return fm_data, body
+            return fm, body
         except:
             pass
+            
+    # 2. 如果正则失败，尝试暴力查找第二个 ---
+    if content.strip().startswith('---'):
+        parts = content.split('---', 2)
+        if len(parts) >= 3:
+            # parts[0] 是空的, parts[1] 是头部, parts[2] 是正文
+            try:
+                fm = yaml.safe_load(parts[1])
+                return fm, parts[2]
+            except:
+                pass
+                
+    # 3. 失败，返回空头部，但保留内容（需小心，这可能导致残留）
     return None, content
 
 def main():
-    print("🚀 启动：手动构建模式 (Bypassing YAML Library)...")
+    print("🚀 启动：分离生成模式...")
     articles = []
     
+    # --- 1. 扫描文章 ---
     for folder in FOLDERS:
         if not os.path.exists(folder): continue
-        files = [f for f in os.listdir(folder) if f.endswith('.md')]
         
-        for filename in files:
-            filepath = os.path.join(folder, filename)
-            with open(filepath, 'r', encoding='utf-8') as f:
-                content = f.read()
-            
-            fm, body = parse_front_matter(content)
-            
-            if fm and 'title' in fm:
-                d_event = str(fm.get('date_event') or fm.get('date') or '1900-01-01')
-                articles.append({
-                    'title': fm['title'],
-                    'date': d_event,
-                    'folder': folder,
-                    'author': fm.get('author', '洪清档案整理组'),
-                    'body': body
-                })
+        for filename in os.listdir(folder):
+            if filename.endswith('.md'):
+                filepath = os.path.join(folder, filename)
+                # 使用 utf-8-sig 自动处理 BOM
+                with open(filepath, 'r', encoding='utf-8-sig') as f:
+                    content = f.read()
+                
+                fm, body = parse_front_matter(content)
+                
+                if fm and 'title' in fm:
+                    d_event = str(fm.get('date_event') or fm.get('date') or '1999-01-01')
+                    articles.append({
+                        'title': fm['title'],
+                        'date': d_event,
+                        'folder': folder,
+                        'author': fm.get('author', '洪清档案整理组'),
+                        'body': body.strip() # 去除首尾空格
+                    })
 
-    # 排序
     articles.sort(key=lambda x: x['date'])
     print(f"📊 抓取到 {len(articles)} 篇文章。")
 
@@ -63,7 +78,7 @@ def main():
         print("❌ 错误: 未找到有效文章。")
         exit(1)
 
-    # 获取标题
+    # --- 2. 生成 metadata.yaml (封面配置) ---
     site_title = "洪清档案"
     if os.path.exists(CONFIG_FILE):
         try:
@@ -72,46 +87,45 @@ def main():
                 if c and 'title' in c: site_title = c['title']
         except: pass
 
-    current_date = datetime.date.today().strftime('%Y-%m-%d')
+    metadata = {
+        'title': site_title,
+        'subtitle': '全站文章汇编 / Full Archive',
+        'author': '洪清档案整理组',
+        'date': datetime.date.today().strftime('%Y-%m-%d'),
+        'geometry': 'margin=1in',
+        'mainfont': 'Noto Sans CJK SC',
+        'sansfont': 'Noto Sans CJK SC', # 避免找不到字体
+        'header-includes': [
+            '\\usepackage{xeCJK}',
+            '\\hypersetup{colorlinks=true, linkcolor=blue}'
+        ]
+    }
 
-    # --- 写入合并文件 ---
-    with open(OUTPUT_FILE, 'w', encoding='utf-8') as out:
-        # 1. 极简 YAML 头部 (绝对安全)
-        out.write("---\n")
-        # 使用 json.dumps 确保标题里的特殊符号被正确转义（比如双引号）
-        out.write(f"title: {json.dumps(site_title, ensure_ascii=False)}\n")
-        out.write(f"subtitle: \"全站文章汇编 / Full Archive\"\n")
-        out.write(f"author: \"洪清档案整理组\"\n")
-        out.write(f"date: \"{current_date}\"\n")
-        out.write(f"geometry: \"margin=1in\"\n")
-        out.write("---\n\n")
-        
-        # 2. 将复杂的 LaTeX 配置移出 YAML，放入 Raw Block
-        # 这招能避开所有 YAML 解析错误
-        out.write("```{=latex}\n")
-        out.write("\\usepackage{xeCJK}\n")
-        out.write("\\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue}\n")
-        # 如果之前的 action 指定了字体，这里可以不加，也可以加上双保险
-        out.write("```\n\n")
+    with open(METADATA_FILE, 'w', encoding='utf-8') as f:
+        yaml.dump(metadata, f, allow_unicode=True, default_flow_style=False)
+    print(f"✅ 生成封面配置: {METADATA_FILE}")
 
-        out.write(f"# 简介\n\n导出日期：{current_date}\n\n\\newpage\n\n")
+    # --- 3. 生成 content.md (纯净正文) ---
+    with open(CONTENT_FILE, 'w', encoding='utf-8') as out:
+        # 不写 YAML 头部！直接开始写内容
+        out.write(f"# 简介\n\n导出时间：{metadata['date']}\n\n\\newpage\n\n")
         
         for article in articles:
             cat_name = CATEGORY_MAP.get(article['folder'], article['folder'])
             out.write(f"# {article['title']}\n\n")
             out.write(f"> **时间**: {article['date']} | **分类**: {cat_name}\n\n")
             
-            # 简单的正文清理
-            body = article['body']
-            # 去掉 Jekyll 的 include 标签
-            body = re.sub(r'\{%.*?%\}', '', body)
-            # 确保正文里没有多余的 metadata block 干扰
-            body = re.sub(r'^---.*?---', '', body, flags=re.DOTALL | re.MULTILINE)
+            # 清理 Jekyll 标签
+            body = re.sub(r'\{%.*?%\}', '', article['body'])
+            # 再次确保没有残留的 YAML ---
+            if body.strip().startswith('---'):
+                 # 如果正文开头还有 ---，说明没切干净，强制去掉前几行
+                 body = re.sub(r'^---.*?---\s*', '', body, flags=re.DOTALL)
             
             out.write(body)
             out.write("\n\n\\newpage\n\n")
-
-    print(f"✅ 成功生成: {OUTPUT_FILE}")
+            
+    print(f"✅ 生成正文内容: {CONTENT_FILE}")
 
 if __name__ == "__main__":
     main()
