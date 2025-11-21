@@ -49,35 +49,8 @@ jobs:
             --toc \
             --toc-depth=2
             
-      - name: Commit PDF to Repo
+      - name: Convert to PDF
         run: |
-          # 1. 检查 PDF 是否真的生成了
-          if [ -f "HongQing_Archives.pdf" ]; then
-            echo "✅ PDF 成功生成，准备移动..."
-          else
-            echo "❌ 错误：找不到生成的 PDF 文件！请检查上一步 pandoc 是否报错。"
-            ls -R  # 列出当前所有文件帮我们找原因
-            exit 1
-          fi
-
-          # 2. 确保目录存在
-          mkdir -p assets/downloads
-          
-          # 3. 移动文件 (覆盖旧的)
-          mv -f HongQing_Archives.pdf assets/downloads/HongQing_Archives.pdf
-          
-          # 4. 配置 Git 身份 (必须配置，否则无法提交)
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # 5. 提交并推送
-          git add assets/downloads/HongQing_Archives.pdf
-          
-          # 只有当文件有变化时才提交
-          if git diff --staged --quiet; then
-            echo "⚠️ PDF 内容没有变化，跳过提交。"
-          else
-            git commit -m "Auto-update PDF export [skip ci]"
-            git push
-            echo "🚀 PDF 已成功推送到仓库！"
-          fi
+          pandoc full_project.md -o HongQing_Archives.pdf \
+            --pdf-engine=xelatex \
+            -V CJKmainfont="Noto Sans CJK SC"
